@@ -5,7 +5,11 @@ pipeline {
 	    stage('Git Check-out') {
 		agent {
                         label "master"
+		}
+		    steps {
+			    echo 'GIT Checkout'
 		git 'https://github.com/kpaul123/Pipeline_Script.git'	
+		    }
 	    }
 	    
 	stage('Non-Parallel Stage') {
