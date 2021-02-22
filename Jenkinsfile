@@ -2,6 +2,12 @@ pipeline {
     agent none
     stages {
 	
+	    stage('Git Check-out') {
+		agent {
+                        label "master"
+		git 'https://github.com/kpaul123/Pipeline_Script.git'	
+	    }
+	    
 	stage('Non-Parallel Stage') {
 	    agent {
                         label "master"
